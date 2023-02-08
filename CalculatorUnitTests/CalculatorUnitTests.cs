@@ -6,14 +6,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CalculatorUnitTests
+namespace UnitTests
 {
-    public class UnitTests
+    public class CalculatorUnitTests
     {
+        [Test]
         public void Sum1And1()
         {
-            Calculator2.Calculator.Sum(1, 1);
-
             int expectedResult = 2;
 
             int actualResult = Calculator2.Calculator.Sum(1, 1);
@@ -23,9 +22,7 @@ namespace CalculatorUnitTests
         [Test]
         public void Sum2And2()
         {
-            Assert.AreEqual(2, 2);
-
-            Assert.AreEqual(expectedResult, actualResult);
+            Assert.AreEqual(4, Calculator2.Calculator.Sum(2, 2));
         }
 
         [Test]
@@ -33,11 +30,15 @@ namespace CalculatorUnitTests
         {
             decimal expectedResult = 0.3m;
 
-            decimal actualResult = Calculator.Calculator.SumDecimal3(0.1m, 0.1m, 0.1m);
+            decimal actualResult = Calculator2.Calculator.SumDecimal3(0.1m, 0.1m, 0.1m);
 
             Assert.AreEqual(expectedResult, actualResult);
         }
-
-
+        [Test]
+        public void Sum3And3()
+        {
+            Assert.AreEqual(6, Calculator2.Calculator.Sum(3, 3));
+        }
     }
-}
+
+}   
