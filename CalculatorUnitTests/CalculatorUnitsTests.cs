@@ -1,4 +1,4 @@
-﻿using Calculator;
+﻿using Calculator2;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
@@ -15,14 +15,14 @@ namespace UnitTests
         {
             int expectedResult = 2;
 
-            int actualResult = Calculator.Calculator.Sum(1, 1);
+            int actualResult = Calculator2.Calculator.Sum(1, 1);
 
             Assert.AreEqual(expectedResult, actualResult);
         }
         [Test]
         public void Sum2And2()
         {
-            Assert.AreEqual(4, Calculator.Calculator.Sum(2, 2));
+            Assert.AreEqual(4, Calculator2.Calculator.Sum(2, 2));
         }
 
         [Test]
@@ -30,14 +30,14 @@ namespace UnitTests
         {
             decimal expectedResult = 0.3m;
 
-            decimal actualResult = Calculator.Calculator.SumDecimal3(0.1m, 0.1m, 0.1m);
+            decimal actualResult = Calculator2.Calculator.SumDecimal3(0.1m, 0.1m, 0.1m);
 
             Assert.AreEqual(expectedResult, actualResult);
         }
         [Test]
         public void Sum3And3()
         {
-            Assert.AreEqual(6, Calculator.Calculator.Sum(3, 3));
+            Assert.AreEqual(6, Calculator2.Calculator.Sum(3, 3));
         }
     }
 

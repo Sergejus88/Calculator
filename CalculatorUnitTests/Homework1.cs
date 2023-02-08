@@ -8,7 +8,7 @@ namespace CalculatorUnitTests
 
         public void CheckReminder995DividedBy()
         {
-            int expectedResult = 0;
+            int expectedResult = 2;
 
             int actualResult = 995 % 3;
 
