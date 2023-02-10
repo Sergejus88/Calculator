@@ -21,8 +21,7 @@ namespace CalculatorUnitTests
                     count++;
                 }
             }
-            Console.WriteLine("Number of even  between 1 and 10 " + count );
-            Console.ReadLine();
+            Assert.AreEqual(4, count);
         }
     }
 }

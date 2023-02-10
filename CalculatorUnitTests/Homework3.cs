@@ -12,9 +12,11 @@ namespace CalculatorUnitTests
         [Test]
         static void Main(string[] args)
         {
-            DateTime now = DateTime.Now;
-            Console.WriteLine("The current time is: " + now.ToString("13:00:00"));
-            Console.ReadLine();
+            DateTime currentDate = DateTime.Now;
+
+            int currentHour = currentDate.Hour;
+
+            Assert.AreEqual(13, currentHour);
         }
     }
 }

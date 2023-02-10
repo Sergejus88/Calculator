@@ -50,6 +50,9 @@
   <ItemGroup>
     <Compile Include="CalculatorUnitsTests.cs" />
     <Compile Include="Homework1.cs" />
+    <Compile Include="Homework2.cs" />
+    <Compile Include="Homework3.cs" />
+    <Compile Include="Homework4.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
