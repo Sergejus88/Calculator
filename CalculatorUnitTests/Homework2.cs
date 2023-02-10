@@ -12,11 +12,18 @@ namespace CalculatorUnitTests
         [Test]
         static void Main(string[] args)
         {
-            
-            DateTime today = DateTime.Now;
-            Console.WriteLine("Today is: " + DateTime.Today.DayOfWeek);
-            Console.ReadLine();
+
+            DateTime currentDate = DateTime.Now;
+
+            DayOfWeek currentWeekday = currentDate.DayOfWeek;
+
+            Assert.AreEqual(DayOfWeek.Wednesday, currentWeekday);
         }
-    
     }
+
+
+
+    
 }
+
+
