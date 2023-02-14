@@ -8,6 +8,13 @@ namespace Calculator2
 {
     public class Calculator
     {
+
+        static void Main(string[] args)
+        {
+
+        }
+
+
         public static int Sum(int number1, int number2)
         {
             return number1 + number2;

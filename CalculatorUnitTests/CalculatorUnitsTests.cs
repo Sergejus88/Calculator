@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace UnitTests
 {
-    public class CalculatorUnitTests
+    public class CalculatorUnitsTests
     {
         [Test]
         public void Sum1And1()
