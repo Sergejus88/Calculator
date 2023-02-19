@@ -1,5 +1,7 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Support.UI;
+using System;
 
 namespace SeleniumFrameWork
 {
@@ -7,8 +9,8 @@ namespace SeleniumFrameWork
     {
        private static IWebDriver driver;
 
-       public static void SetupDriver()
-       {
+        public static void SetupDriver()
+        {
             driver = new ChromeDriver();
         }
 
@@ -27,10 +29,5 @@ namespace SeleniumFrameWork
         {
             driver.Quit();
         }
- 
-    
-    
-    
-    
     }
 }

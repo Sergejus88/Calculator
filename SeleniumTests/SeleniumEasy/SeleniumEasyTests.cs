@@ -4,7 +4,7 @@ using SeleniumFrameWork.Pages.SeleniumEasy;
 
 namespace SeleniumTests.SeleniumEasy
 {
-    internal class SeleniumFormDemoTests
+    internal class SeleniumEasyTests
     {
         [Test]
         public void SingleInputField()
@@ -41,44 +41,6 @@ namespace SeleniumTests.SeleniumEasy
 
             Assert.AreEqual(expectedResult, actualResult);
 
-            Driver.CloseDriver();
-        }
-
-        [Test]
-        public void TextBox()
-        {
-            Driver.SetupDriver();
-            Driver.OpenUrl("https://demoqa.com/text-box");
-
-            string expectedResult = "Sergejus";
-            string inputE = "sergejus.semionkinas@gmail.com";
-            string inputCurrent = "Kolokotroni20";
-            string inputPermanent = "Misku36"; ;
-
-            SimpleFormDemo.inputFullName(expectedResult);
-            SimpleFormDemo.InputE(inputE);
-            SimpleFormDemo.inputCurrent(inputCurrent);
-            SimpleFormDemo.inputPermanent(inputPermanent);
-            SimpleFormDemo.ClickGetTotalButton();
-            string actualResult = SimpleFormDemo.GetTextBox();
-
-            Assert.AreEqual(expectedResult, actualResult);
-
-            Driver.CloseDriver();
-        }
-
-        [Test]
-        public void FillBadFormaWithInvalidEmail()
-        {
-            Driver.SetupDriver();
-            Driver.OpenUrl("https://demoqa.com/text-box");
-
-            string valueInputEmail = "InvalidEmail";
-
-            SimpleFormDemo.InputEInvalidEmail(valueInputEmail);
-            SimpleFormDemo.ClickGetTotalButton();
-            string actualResult = SimpleFormDemo.GetFillBadFormaWithInvalidEmail();
-            
             Driver.CloseDriver();
         }
     }

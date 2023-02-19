@@ -84,8 +84,6 @@ namespace SeleniumFrameWork.Pages.SeleniumEasy
             return Common.GetElementText(locator);
         }
 
-
-
         public static void InputEInvalidEmail(string value)
         {
             string locator = "//*[@id='userEmail']";
@@ -98,6 +96,26 @@ namespace SeleniumFrameWork.Pages.SeleniumEasy
             return Common.GetElementText(locator);
 
         }
+
+        //
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
 }
       
