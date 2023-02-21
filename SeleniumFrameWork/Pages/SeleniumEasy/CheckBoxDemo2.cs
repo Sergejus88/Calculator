@@ -9,74 +9,24 @@ using System.Xml.Linq;
 
 namespace SeleniumFrameWork.Pages.SeleniumEasy
 {
-    public class CheckBoxDemo2
-    {
-        
-        public class Locators
-        {
-            string ActualButton1 = "//*[@id='easycont']";
-            string ActualButton2 = "//*[@id='easycont']";
-            string ActualButton3 = "//*[@id='easycont']";
-            string ActualButton4 = "//*[@id='easycont']";
-            string CheckElementMarking = "//*[@id=check1] ";
-            string CheckElementIfIsCheckedValue = "//*[@id=isChkd]";        
-        }
- 
+     public class CheckBoxDemo2
+     {
+        private static string inputsMultipleCheckbox = "//*[@class='cb1-element']";
+        private static string buttonMultipleCheckboxes = "//*[@id='check1']";
+
         public static void Open()
         {
             Driver.OpenUrl("https://demo.seleniumeasy.com/basic-checkbox-demo.html");
         }
 
-        public static bool GetMultipleCheckboxButtonText()
+        public static void ClickEachOfMultipleCheckboxes()
         {
-            return Common.GetAttributeValue(true);
+            Common.ClickElements(inputsMultipleCheckbox);
         }
 
-
-        internal static void ClickElements(string locator, string actualButton1, string actualButton2, string actualButton3, string actualButton4)
+        public static string GetMultipleCheckboxButtonText()
         {
-            List<IWebElement> elements = GetElement(locator);
-
-            foreach (IWebElement element in elements)
-            {
-                element.Click();
-            }
-        }
-
-        internal static void ClickElements1(string locator, string actualButton1, string actualButton2, string actualButton3, string actualButton4)
-        {
-            List<IWebElement> elements = GetElement(locator); ;
-
-            foreach(IWebElement element in elements)
-            {
-                element.Click();
-            }
-        }
-
-        private static List<IWebElement> GetElement(string locator)
-        {
-            throw new NotImplementedException();
-        }
-
-        internal static void ClickElements2(string locator, string actualButton1, string actualButton2, string actualButton3, string actualButton4)
-        {
-            List<IWebElement> elements = GetElement(locator); ;
-
-            foreach (IWebElement element in elements)
-            {
-                element.Click();
-            }
-        }
-
-        internal static void ClickElements3(string locator, string actualButton1, string actualButton2, string actualButton3, string actualButton4)
-        {
-            List<IWebElement> elements = GetElement(locator); ;
-
-            foreach (IWebElement element in elements)
-            {
-                element.Click();
-            }
-
+            return Common.GetAttributeValue(buttonMultipleCheckboxes, "value");
         }
      }
 }  

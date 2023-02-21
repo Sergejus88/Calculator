@@ -78,14 +78,9 @@ namespace FinalWork
             return GetElement(locator).Enabled;
         }
 
-        internal static string SendKeys(string FillSignUp)
-        {
-            return Common.SendKeys(FillSignUp);
-        }
-
         internal static string SendKeys(object FillSignUp)
         {
-            return Common.SendKeys(FillSignUp);
+            return SendKeys(FillSignUp);
         }
     }
 }
