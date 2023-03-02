@@ -1,5 +1,6 @@
 ﻿using NUnit.Framework;
 using SeleniumFrameWork;
+using SeleniumFrameWork.Pages.SeleniumEasy;
 using System.Collections.Generic;
 
 namespace SeleniumTests.SeleniumEasy
@@ -10,7 +11,7 @@ namespace SeleniumTests.SeleniumEasy
         public void SetUp()
         {
             Driver.SetupDriver();
-            CheckboxDemo.Open();
+            CheckBoxDemo.Open();
         }
 
         [Test]
@@ -18,8 +19,8 @@ namespace SeleniumTests.SeleniumEasy
         {
             string expectedMessage = "Success - Check box is checked";
 
-            CheckboxDemo.ClickSingleCheckbox();
-            string actualResult = CheckboxDemo.GetSingleCheckboxSuccessMessage();
+            CheckBoxDemo.ClickSingleCheckbox();
+            string actualResult = CheckBoxDemo.GetSingleCheckboxSuccessMessage();
 
             Assert.AreEqual(expectedMessage, actualResult);
         }
@@ -29,8 +30,8 @@ namespace SeleniumTests.SeleniumEasy
         {
             string expectedButtonText = "Uncheck All";
 
-            CheckboxDemo.ClickEachOfMultipleCheckboxes();
-            string actualButtonText = CheckboxDemo.GetMultipleCheckboxButtonText();
+            CheckBoxDemo.ClickEachOfMultipleCheckboxes();
+            string actualButtonText = CheckBoxDemo.GetMultipleCheckboxButtonText();
 
             Assert.AreEqual(expectedButtonText, actualButtonText);
         }
@@ -38,23 +39,23 @@ namespace SeleniumTests.SeleniumEasy
         [Test]
         public void MultipleCheckboxesByButton()
         {
-            CheckboxDemo.ClickButtonCheckAll();
-            Assert.IsTrue(CheckboxDemo.GetCheckbox1Status());
-            Assert.IsTrue(CheckboxDemo.GetCheckbox2Status());
-            Assert.IsTrue(CheckboxDemo.GetCheckbox3Status());
-            Assert.IsTrue(CheckboxDemo.GetCheckbox4Status());
+            CheckBoxDemo.ClickButtonCheckAll();
+            Assert.IsTrue(CheckBoxDemo.GetCheckbox1Status());
+            Assert.IsTrue(CheckBoxDemo.GetCheckbox2Status());
+            Assert.IsTrue(CheckBoxDemo.GetCheckbox3Status());
+            Assert.IsTrue(CheckBoxDemo.GetCheckbox4Status());
 
-            CheckboxDemo.ClickButtonCheckAll();
-            Assert.IsFalse(CheckboxDemo.GetCheckbox1Status());
-            Assert.IsFalse(CheckboxDemo.GetCheckbox2Status());
-            Assert.IsFalse(CheckboxDemo.GetCheckbox3Status());
-            Assert.IsFalse(CheckboxDemo.GetCheckbox4Status());
+            CheckBoxDemo.ClickButtonCheckAll();
+            Assert.IsFalse(CheckBoxDemo.GetCheckbox1Status());
+            Assert.IsFalse(CheckBoxDemo.GetCheckbox2Status());
+            Assert.IsFalse(CheckBoxDemo.GetCheckbox3Status());
+            Assert.IsFalse(CheckBoxDemo.GetCheckbox4Status());
         }
 
         [Test]
         public void MultipleCheckboxesStatusCheck()
         {
-            List<bool> statuses = CheckboxDemo.GetStatusOfAllCheckboxes();
+            List<bool> statuses = CheckBoxDemo.GetStatusOfAllCheckboxes();
 
             foreach (bool status in statuses)
             {
@@ -68,20 +69,20 @@ namespace SeleniumTests.SeleniumEasy
             string buttonTextUncheck = "Uncheck All";
             string buttonTextCheck = "Check All";
 
-            CheckboxDemo.ClickCheckbox1();
-            string actualButtonText = CheckboxDemo.GetMultipleCheckboxButtonText();
+            CheckBoxDemo.ClickCheckbox1();
+            string actualButtonText = CheckBoxDemo.GetMultipleCheckboxButtonText();
             Assert.AreEqual(buttonTextCheck, actualButtonText);
 
-            CheckboxDemo.ClickCheckbox2();
-            actualButtonText = CheckboxDemo.GetMultipleCheckboxButtonText();
+            CheckBoxDemo.ClickCheckbox2();
+            actualButtonText = CheckBoxDemo.GetMultipleCheckboxButtonText();
             Assert.AreEqual(buttonTextCheck, actualButtonText);
 
-            CheckboxDemo.ClickCheckbox3();
-            actualButtonText = CheckboxDemo.GetMultipleCheckboxButtonText();
+            CheckBoxDemo.ClickCheckbox3();
+            actualButtonText = CheckBoxDemo.GetMultipleCheckboxButtonText();
             Assert.AreEqual(buttonTextCheck, actualButtonText);
 
-            CheckboxDemo.ClickCheckbox4();
-            actualButtonText = CheckboxDemo.GetMultipleCheckboxButtonText();
+            CheckBoxDemo.ClickCheckbox4();
+            actualButtonText = CheckBoxDemo.GetMultipleCheckboxButtonText();
             Assert.AreEqual(buttonTextUncheck, actualButtonText);
         }
 

@@ -87,7 +87,7 @@ namespace SeleniumTestWithoutPom
             //jse.ExecuteScript("window.scrollBy(0, 200)");
 
             // Naujas būdas
-            driver.ExecuteJavaScript("window.scrollBy(0, 100)");
+            driver.ExcecuteJavaScript("window.scrollBy(0, 100)");
             buttonSubmit.Click();
 
             IWebElement outputName = driver.FindElement(By.XPath("//*[@id='output']//*[@id='name']"));

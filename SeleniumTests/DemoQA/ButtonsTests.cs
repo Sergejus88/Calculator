@@ -1,11 +1,6 @@
 ﻿using NUnit.Framework;
 using SeleniumFrameWork.Pages.DemoQA;
 using SeleniumTests.BaseTests;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SeleniumTests.DemoQA
 {

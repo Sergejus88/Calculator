@@ -1,4 +1,5 @@
 ﻿using NUnit.Framework;
+using SeleniumFrameWork.Pages.DemoQA;
 using SeleniumTests.BaseTests;
 
 namespace SeleniumTests.DemoQA
@@ -8,7 +9,7 @@ namespace SeleniumTests.DemoQA
         [SetUp]
         public void Open()
         {
-            Tooltips.Open();
+            ToolTips.Open();
         }
 
         [Test]
@@ -16,7 +17,7 @@ namespace SeleniumTests.DemoQA
         {
             string expectedMessage = "You hovered over the Button";
 
-            string actualMessage = Tooltips.GetTooltipMessage();
+            string actualMessage = ToolTips.GetTooltipMessage();
             Assert.AreEqual(expectedMessage, actualMessage);
         }
     }

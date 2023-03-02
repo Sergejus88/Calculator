@@ -52,6 +52,7 @@ namespace SeleniumTestWithoutPom
             Assert.AreEqual(expectedResult, actualResult);
 
             driver.Quit();
-    }   }
+        }
+    }
 }
 

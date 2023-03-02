@@ -1,4 +1,5 @@
 ﻿using NUnit.Framework;
+using SeleniumFrameWork.Pages.DemoQA;
 using SeleniumTests.BaseTests;
 
 namespace SeleniumTests.DemoQA

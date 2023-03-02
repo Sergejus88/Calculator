@@ -1,5 +1,6 @@
 ﻿using NUnit.Framework;
 using SeleniumFrameWork;
+using SeleniumFrameWork.Pages.SeleniumEasy;
 
 namespace SeleniumTests.SeleniumEasy
 {
@@ -9,7 +10,7 @@ namespace SeleniumTests.SeleniumEasy
         public void Setup()
         {
             Driver.SetupDriver();
-            SelectDropdownList.Open();
+            SelectDropDownList.Open();
         }
 
         [Test]
@@ -17,8 +18,8 @@ namespace SeleniumTests.SeleniumEasy
         {
             string expectedDay = "Tuesday";
 
-            SelectDropdownList.SelectDay(expectedDay);
-            string actualResult = SelectDropdownList.GetSelectedDay();
+            SelectDropDownList.SelectDay(expectedDay);
+            string actualResult = SelectDropDownList.GetSelectedDay();
 
             Assert.IsTrue(actualResult.Contains(expectedDay));
         }

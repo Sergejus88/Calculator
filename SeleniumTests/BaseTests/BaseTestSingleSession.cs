@@ -1,9 +1,6 @@
 ﻿using NUnit.Framework.Interfaces;
 using NUnit.Framework;
 using SeleniumFrameWork;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 namespace SeleniumTests.BaseTests
 {
     internal class BaseTestSingleSession
