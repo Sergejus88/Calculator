@@ -56,9 +56,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Calculator2\Calculator2.csproj">
+    <ProjectReference Include="..\Calculator2\Calculator.csproj">
       <Project>{4fd25dbe-91d0-472b-abc9-d1c768aba71d}</Project>
-      <Name>Calculator2</Name>
+      <Name>Calculator</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

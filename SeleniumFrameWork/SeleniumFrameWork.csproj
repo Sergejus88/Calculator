@@ -74,20 +74,17 @@
     <Compile Include="Pages\DemoQA\Frames.cs" />
     <Compile Include="Pages\DemoQA\Locators.cs" />
     <Compile Include="Pages\DemoQA\SelectMenu.cs" />
-    <Compile Include="Pages\DemoQA\SimpleFormDemo.cs" />
     <Compile Include="Pages\DemoQA\TextBox.cs" />
     <Compile Include="Pages\DemoQA\ToolTips.cs" />
+    <Compile Include="Pages\Ignitis\HomePage.cs" />
     <Compile Include="Pages\SeleniumEasy\CheckBoxDemo.cs" />
-    <Compile Include="Pages\SeleniumEasy\CheckBoxDemo2.cs" />
     <Compile Include="Pages\SeleniumEasy\DynamicDataLoadingDemo.cs" />
     <Compile Include="Pages\SeleniumEasy\JavaScriptAlerts.cs" />
-    <Compile Include="Pages\SeleniumEasy\LoadingTests.cs" />
     <Compile Include="Pages\SeleniumEasy\SelectDropDownList.cs" />
+    <Compile Include="Pages\SeleniumEasy\SimpleFormDemo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Pages\Ignitis\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
