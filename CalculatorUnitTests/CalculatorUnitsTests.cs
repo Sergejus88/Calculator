@@ -1,10 +1,4 @@
-﻿using Calculator2;
-using NUnit.Framework;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using NUnit.Framework;
 
 namespace UnitTests
 {
@@ -40,5 +34,4 @@ namespace UnitTests
             Assert.AreEqual(6, Calculator2.Calculator.Sum(3, 3));
         }
     }
-
 }   
