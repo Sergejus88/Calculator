@@ -1,14 +1,8 @@
-﻿using OpenQA.Selenium;
-using SeleniumTests.DemoQA;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using SeleniumTests.DemoQA;
 
 namespace SeleniumFrameWork.Pages.DemoQA
 {
-    public class TextBoxDemo
+    public class TextBox
     {
         public static void Open()
         {
@@ -37,6 +31,8 @@ namespace SeleniumFrameWork.Pages.DemoQA
 
         public static void ClickSubmitButton()
         {
+            // Need to scroll down a bit because button is hidden under footer element
+            Common.ScrollBy(0, 100);
             Common.ClickElement(Locators.TextBox.buttonSubmit);
         }
 
@@ -57,10 +53,8 @@ namespace SeleniumFrameWork.Pages.DemoQA
 
         public static string GetPermanentAddressOutput()
         {
-            return Common.GetElementText(Locators.TextBox.outputPermanentAddress);  
+            return Common.GetElementText(Locators.TextBox.outputPermanentAddress);
         }
-
-        //
 
         public static bool CheckIfEmailErrorIsDisplayed()
         {
@@ -79,8 +73,8 @@ namespace SeleniumFrameWork.Pages.DemoQA
         public static bool CheckIfEmailBorderIsRed()
         {
             Common.Wait(500);
-            string cssBorderColor = Common.GetCssValue(Locators.TextBox.inputEmail, "border-color");
 
+            string cssBorderColor = Common.GetCssValue(Locators.TextBox.inputEmail, "border-color");
             if (cssBorderColor == "rgb(255, 0, 0)")
             {
                 return true;

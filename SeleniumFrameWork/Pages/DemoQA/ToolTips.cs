@@ -1,13 +1,8 @@
 ﻿using SeleniumTests.DemoQA;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SeleniumFrameWork.Pages.DemoQA
 {
-    internal class ToolTips
+    public class ToolTips
     {
         public static void Open()
         {

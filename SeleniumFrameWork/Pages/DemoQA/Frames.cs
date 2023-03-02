@@ -1,12 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SeleniumFrameWork.Pages.DemoQA
+﻿namespace SeleniumFrameWork.Pages.DemoQA
 {
-    internal class Frames
+    public class Frames
     {
+        public static void Open()
+        {
+            Driver.OpenUrl("https://demoqa.com/frames");
+        }
+
+        private static void SwitchToIframe()
+        {
+            string locator = "//*[@id='frame1']";
+            Common.SwitchToIframe(locator);
+        }
+
+        public static string GetFrameHeadingText()
+        {
+            string locator = "//*[@id='sampleHeading']";
+            SwitchToIframe();
+            return Common.GetElementText(locator);
+        }
     }
 }

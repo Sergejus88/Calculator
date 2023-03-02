@@ -75,7 +75,7 @@
     <Compile Include="Pages\DemoQA\Locators.cs" />
     <Compile Include="Pages\DemoQA\SelectMenu.cs" />
     <Compile Include="Pages\DemoQA\SimpleFormDemo.cs" />
-    <Compile Include="Pages\DemoQA\TextBoxDemo.cs" />
+    <Compile Include="Pages\DemoQA\TextBox.cs" />
     <Compile Include="Pages\DemoQA\ToolTips.cs" />
     <Compile Include="Pages\SeleniumEasy\CheckBoxDemo.cs" />
     <Compile Include="Pages\SeleniumEasy\CheckBoxDemo2.cs" />
