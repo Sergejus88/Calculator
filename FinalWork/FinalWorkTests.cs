@@ -31,8 +31,9 @@ namespace FinalWork
             string inputLastname = "Semionkinas";
             string inputEmail = "sergejus.semionkinas@gmail.com";
             string inputPassword = "Dtys7x@YDdB6XeV";
-            string inputReapetPassword = "Dtys7x@YDdB6XeV"; 
+            string inputReapetPassword = "Dtys7x@YDdB6XeV";
 
+            FinalWork.FillSignUp();
             FinalWork.inputFirstName(inputFirstName);
             FinalWork.inputLastName(inputLastname);
             FinalWork.inputEmailSignUP(inputEmail);

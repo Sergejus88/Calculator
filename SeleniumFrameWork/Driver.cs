@@ -22,7 +22,7 @@ namespace SeleniumFrameWork
         public static void OpenUrl(string url) 
         {
             driver.Url = url;
-            //driver.Navigate().GoToUrl(url);
+            driver.Navigate().GoToUrl(url);
         }
 
         public static void CloseDriver()

@@ -1,16 +1,16 @@
 ﻿using NUnit.Framework;
 using SeleniumFrameWork;
-using SeleniumFrameWork.Pages.SeleniumEasy;
+using System.Collections.Generic;
 
 namespace SeleniumTests.SeleniumEasy
 {
     internal class CheckBoxDemoTests
     {
         [SetUp]
-        public void SetUp() 
-        { 
+        public void SetUp()
+        {
             Driver.SetupDriver();
-            CheckBoxDemo.Open();
+            CheckboxDemo.Open();
         }
 
         [Test]
@@ -18,8 +18,8 @@ namespace SeleniumTests.SeleniumEasy
         {
             string expectedMessage = "Success - Check box is checked";
 
-            CheckBoxDemo.ClickSingleCheckbox();
-            string actualResult = CheckBoxDemo.GetSingleCheckboxDemoSuccessMessage();
+            CheckboxDemo.ClickSingleCheckbox();
+            string actualResult = CheckboxDemo.GetSingleCheckboxSuccessMessage();
 
             Assert.AreEqual(expectedMessage, actualResult);
         }
@@ -29,16 +29,66 @@ namespace SeleniumTests.SeleniumEasy
         {
             string expectedButtonText = "Uncheck All";
 
-            CheckBoxDemo.ClickEachofMultipleTextboxes();
-            string actualButtonText = CheckBoxDemo.GetMultipleCheckboxButtonText();
+            CheckboxDemo.ClickEachOfMultipleCheckboxes();
+            string actualButtonText = CheckboxDemo.GetMultipleCheckboxButtonText();
 
             Assert.AreEqual(expectedButtonText, actualButtonText);
         }
 
-        [TearDown] 
-        public void TearDown() 
+        [Test]
+        public void MultipleCheckboxesByButton()
+        {
+            CheckboxDemo.ClickButtonCheckAll();
+            Assert.IsTrue(CheckboxDemo.GetCheckbox1Status());
+            Assert.IsTrue(CheckboxDemo.GetCheckbox2Status());
+            Assert.IsTrue(CheckboxDemo.GetCheckbox3Status());
+            Assert.IsTrue(CheckboxDemo.GetCheckbox4Status());
+
+            CheckboxDemo.ClickButtonCheckAll();
+            Assert.IsFalse(CheckboxDemo.GetCheckbox1Status());
+            Assert.IsFalse(CheckboxDemo.GetCheckbox2Status());
+            Assert.IsFalse(CheckboxDemo.GetCheckbox3Status());
+            Assert.IsFalse(CheckboxDemo.GetCheckbox4Status());
+        }
+
+        [Test]
+        public void MultipleCheckboxesStatusCheck()
+        {
+            List<bool> statuses = CheckboxDemo.GetStatusOfAllCheckboxes();
+
+            foreach (bool status in statuses)
+            {
+                Assert.IsFalse(status);
+            }
+        }
+
+        [Test]
+        public void MultipleCheckboxesWithIntermediaryAsserts()
+        {
+            string buttonTextUncheck = "Uncheck All";
+            string buttonTextCheck = "Check All";
+
+            CheckboxDemo.ClickCheckbox1();
+            string actualButtonText = CheckboxDemo.GetMultipleCheckboxButtonText();
+            Assert.AreEqual(buttonTextCheck, actualButtonText);
+
+            CheckboxDemo.ClickCheckbox2();
+            actualButtonText = CheckboxDemo.GetMultipleCheckboxButtonText();
+            Assert.AreEqual(buttonTextCheck, actualButtonText);
+
+            CheckboxDemo.ClickCheckbox3();
+            actualButtonText = CheckboxDemo.GetMultipleCheckboxButtonText();
+            Assert.AreEqual(buttonTextCheck, actualButtonText);
+
+            CheckboxDemo.ClickCheckbox4();
+            actualButtonText = CheckboxDemo.GetMultipleCheckboxButtonText();
+            Assert.AreEqual(buttonTextUncheck, actualButtonText);
+        }
+
+        [TearDown]
+        public void TearDown()
         {
             Driver.CloseDriver();
         }
-    }
+    }        
 }

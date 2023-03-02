@@ -1,64 +1,16 @@
 ﻿using NUnit.Framework;
-using SeleniumFrameWork.Pages.SeleniumEasy;
-using SeleniumFrameWork;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using SeleniumFrameWork.Pages.DemoQA;
+using SeleniumTests.BaseTests;
 
 namespace SeleniumTests.DemoQA
 {
-    public class TextBoxTests
+    internal class TextBoxTests : BaseTest
     {
-        [Test]
-        public void TextBox()
-        {
-            Driver.SetupDriver();
-            Driver.OpenUrl("https://demoqa.com/text-box");
-
-            string expectedResult = "Sergejus";
-            string inputE = "sergejus.semionkinas@gmail.com";
-            string inputCurrent = "Kolokotroni20";
-            string inputPermanent = "Misku36"; ;
-
-            SimpleFormDemo.inputFullName(expectedResult);
-            SimpleFormDemo.InputE(inputE);
-            SimpleFormDemo.inputCurrent(inputCurrent);
-            SimpleFormDemo.inputPermanent(inputPermanent);
-            SimpleFormDemo.ClickGetTotalButton();
-            string actualResult = SimpleFormDemo.GetTextBox();
-
-            Assert.AreEqual(expectedResult, actualResult);
-
-            Driver.CloseDriver();
-        }
-
-        [Test]
-        public void FillBadFormaWithInvalidEmail()
-        {
-            Driver.SetupDriver();
-            Driver.OpenUrl("https://demoqa.com/text-box");
-
-            string valueInputEmail = "InvalidEmail";
-
-            SimpleFormDemo.InputEInvalidEmail(valueInputEmail);
-            SimpleFormDemo.ClickGetTotalButton();
-            string actualResult = SimpleFormDemo.GetFillBadFormaWithInvalidEmail();
-
-            Driver.CloseDriver();
-        }
-
-
-
-        // destytojo pavyzdys//
         [SetUp]
-        public void SetUp()
+        public void Open()
         {
-            Driver.SetupDriver();
-            TextBoxDemo.Open();
+            TextBox.Open();
         }
+
         [Test]
         public void FillFormWithValidEmail()
         {
@@ -67,16 +19,16 @@ namespace SeleniumTests.DemoQA
             string valueInputCurrentAddress = "My current address";
             string valueInputPermanentAddress = "My permanent address";
 
-            TextBoxDemo.EnterFullName(valueInputName);
-            TextBoxDemo.EnterEmail(valueInputEmail);
-            TextBoxDemo.EnterCurrentAddress(valueInputCurrentAddress);
-            TextBoxDemo.EnterPermanentAddress(valueInputPermanentAddress);
-            TextBoxDemo.ClickSubmitButton();
+            TextBox.EnterFullName(valueInputName);
+            TextBox.EnterEmail(valueInputEmail);
+            TextBox.EnterCurrentAddress(valueInputCurrentAddress);
+            TextBox.EnterPermanentAddress(valueInputPermanentAddress);
+            TextBox.ClickSubmitButton();
 
-            string actualFullName = TextBoxDemo.GetFullNameOutput();
-            string actualEmail = TextBoxDemo.GetEmailOutput();
-            string actualCurrentAddress = TextBoxDemo.GetCurrentAddressOutput();
-            string actualPermanentAddress = TextBoxDemo.GetPermanentAddressOutput();
+            string actualFullName = TextBox.GetFullNameOutput();
+            string actualEmail = TextBox.GetEmailOutput();
+            string actualCurrentAddress = TextBox.GetCurrentAddressOutput();
+            string actualPermanentAddress = TextBox.GetPermanentAddressOutput();
 
             Assert.IsTrue(actualFullName.Contains(valueInputName));
             Assert.IsTrue(actualEmail.Contains(valueInputEmail));
@@ -84,24 +36,16 @@ namespace SeleniumTests.DemoQA
             Assert.IsTrue(actualPermanentAddress.Contains(valueInputPermanentAddress));
         }
 
-
         [Test]
-        public void FillBadFormaWithInvalidEmail0()
+        public void FillFormWithInvalidEmail()
         {
-            string valueInputEmail = "InvalidEmail";
+            string valueInputEmail = "invalidEmail";
 
-            TextBoxDemo.EnterEmail(valueInputEmail);
-            TextBoxDemo.ClickSubmitButton();
+            TextBox.EnterEmail(valueInputEmail);
+            TextBox.ClickSubmitButton();
 
-            Assert.IsTrue(TextBoxDemo.CheckIfEmailErrorIsDisplayed());
-            Assert.IsTrue(TextBoxDemo.CheckIfEmailBorderIsRed());
-        }
-
-        [TearDown]
-
-        public void Teardown()
-        {
-            Driver.CloseDriver();
+            Assert.IsTrue(TextBox.CheckIfEmailErrorIsDisplayed());
+            Assert.IsTrue(TextBox.CheckIfEmailBorderIsRed());
         }
     }
 }                   

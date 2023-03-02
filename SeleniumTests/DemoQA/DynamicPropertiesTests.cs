@@ -1,34 +1,39 @@
 ﻿using NUnit.Framework;
-using SeleniumFrameWork.Pages.SeleniumEasy;
-using SeleniumFrameWork;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using SeleniumFrameWork.Pages.DemoQA;
+using SeleniumTests.BaseTests;
 
 namespace SeleniumTests.DemoQA
 {
-    internal class DynamicPropertiesTests
+    internal class DynamicPropertiesTests : BaseTest
     {
         [SetUp]
-        public void SetUp()
+        public void Open()
         {
-            Driver.SetupDriver();
-            CheckBoxDemo.Open();
+            DynamicProperties.Open();
         }
 
         [Test]
         public void WaitForButtonToBeClickable()
-        {  
+        {
             Assert.IsTrue(DynamicProperties.WaitForButtonToBeClickable());
         }
 
-        [TearDown]
-        public void TearDown()
+        [Test]
+        public void WaitForButtonClassToChange()
         {
-            Driver.CloseDriver();
+            DynamicProperties.WaitForButtonClassToChange();
+        }
+
+        [Test]
+        public void WaitForButtonBorderToBeRed()
+        {
+            DynamicProperties.WaitForButtonTextToBeRed();
+        }
+
+        [Test]
+        public void WaitForButtonToBeVisible()
+        {
+            DynamicProperties.WaitForButtonToBeVisible();
         }
     }
-}
+}    

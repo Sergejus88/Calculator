@@ -4,27 +4,25 @@ namespace SeleniumFrameWork.Pages.SeleniumEasy
 {
     public class CheckBoxDemo
     {
-        private static string inputSingleCheckBox = "//*[@id=isAgeSelected]";
-        private static string fieldSingleCheckBoxSuccessesMessage = "//*[@id=txtAge]";
-        private static string buttonMultipleCheckboxes = "*[@class='cb1-element']";
         private static string inputsMultipleCheckbox = "//*[@id=check1]";
+        private static string buttonMultipleCheckboxes = "*[@class='cb1-element']";
+        private static string inputSingleCheckbox = "//*[@id='isAgeSelected']";
+        private static string fieldSingleCheckboxSuccessMessage = "//*[@id=txtAge]";
 
         public static void Open()
         {
             Driver.OpenUrl("https://demo.seleniumeasy.com/basic-checkbox-demo.html");
         }
-
         public static void ClickSingleCheckbox()
         {
-            Common.ClickElement(inputSingleCheckBox);
+            Common.ClickElement(inputSingleCheckbox);
         }
-
-        public static string GetSingleCheckboxDemoSuccessMessage()
+        public static string GetSingleCheckboxSuccessMessage()
         {
-           return Common.GetElementText(fieldSingleCheckBoxSuccessesMessage);
+            return Common.GetElementText(fieldSingleCheckboxSuccessMessage);
         }
 
-        public static void ClickEachofMultipleTextboxes()
+        public static void ClickEachOfMultipleCheckboxes()
         {
             Common.ClickElements(inputsMultipleCheckbox);
         }
@@ -35,3 +33,4 @@ namespace SeleniumFrameWork.Pages.SeleniumEasy
         }
     }
 }
+

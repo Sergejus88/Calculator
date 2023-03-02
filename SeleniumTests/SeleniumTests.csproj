@@ -55,11 +55,22 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseTests\BaseTest.cs" />
+    <Compile Include="BaseTests\BaseTestChromeProfile.cs" />
+    <Compile Include="BaseTests\BaseTestSingleSession.cs" />
+    <Compile Include="DemoQA\ButtonsTests.cs" />
     <Compile Include="DemoQA\DynamicPropertiesTests.cs" />
+    <Compile Include="DemoQA\FramesTests.cs" />
+    <Compile Include="DemoQA\SelectMenuTests.cs" />
     <Compile Include="DemoQA\TextBoxTests.cs" />
+    <Compile Include="DemoQA\ToolTipsTests.cs" />
+    <Compile Include="Ignitis\HomePageTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SeleniumEasy\CheckBoxDemoTests.cs" />
-    <Compile Include="SeleniumEasy\SeleniumEasyTests.cs" />
+    <Compile Include="SeleniumEasy\DynamicDataLoadingDemoTests.cs" />
+    <Compile Include="SeleniumEasy\JavaScriptAlertsTests.cs" />
+    <Compile Include="SeleniumEasy\SelectDropDownListTests.cs" />
+    <Compile Include="SeleniumEasy\SimpleFormDemoTests.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

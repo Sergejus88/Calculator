@@ -16,8 +16,8 @@ namespace FinalWork
             internal static string inputPassword = "//*[@id=user_password]";
             internal static string inputReapetPassword = "//*[@id=user_password_confirmation]";
             internal static string buttonSubmit = "//*[@id=new_user]/div[9]/input";
-            internal static object FillSignUp = "//*[@id=new_user]/div[9]/input";
-            internal static object FillTheField = "//*[@id=physical_smart_card_card_number_suffix]";
+            internal static string FillSignUp = "//*[@id=new_user]/div[9]/input";
+            internal static string FillTheField = "//*[@id=physical_smart_card_card_number_suffix]";
             internal static string inputNumbers = "//*[@id=physical_smart_card_card_number_suffix]";
         }
     }
